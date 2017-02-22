@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+
+project '../DataSources/DataSources'
+workspace '../DataSources.xcworkspace'
+
+inhibit_all_warnings!
+use_frameworks!
+
+target :DataSources do
+    pod 'ReactiveCocoa', '5.0.0'
+end
+

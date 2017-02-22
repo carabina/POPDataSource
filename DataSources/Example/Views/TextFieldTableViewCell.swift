@@ -1,19 +1,16 @@
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate, ReuseIdentifier {
+class TextFieldTableViewCell: UITableViewCell, ReuseIdentifier {
 
     @IBOutlet weak var textField: UITextField?
-    @IBOutlet weak var divider: UIImageView?
-    @IBOutlet weak var subTitle: UILabel?
-    @IBOutlet weak var icon: UIImageView?
-    
-    var didBeginEditing: (() -> ())?
-    var didEndEditing: (() -> ())?
-    var shouldChangeCharacter: ((NSRange, String) -> Bool)?
+    @IBOutlet weak private var divider: UIImageView?
+    @IBOutlet weak private var subTitle: UILabel?
+    @IBOutlet weak private var icon: UIImageView?
+    @IBOutlet weak var show: UIButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.textField?.delegate = self
+        self.normal()
     }
     
     func normal() {
@@ -35,22 +32,9 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate, ReuseIdentif
         self.divider?.backgroundColor = .red
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let action = self.didBeginEditing {
-             action()
+    @IBAction private func show(_ sender: UIButton) {
+        if let textField = textField {
+            textField.isSecureTextEntry = !(textField.isSecureTextEntry)
         }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let action = self.didEndEditing {
-             action()
-        }
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let action = self.shouldChangeCharacter {
-            return action(range, string)
-        }
-        return true
     }
 }
