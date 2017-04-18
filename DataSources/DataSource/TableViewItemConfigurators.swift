@@ -6,24 +6,34 @@ public enum HeaderFooterView <Section: UIView>{
     case none
 }
 
-public enum Action {
-    case select
-    case highlight
-    case unhighlight
-    case custom(String)
+public struct DataSource {
+    public enum Action {
+        case select
+        case edit
+        case delete
+        case highlight
+        case unhighlight
+        case willDisplay
+        case willDisplayHeader
+        case custom(String)
+    }
 }
 
-extension Action: Hashable, Equatable {
+extension DataSource.Action: Hashable, Equatable {
     public var hashValue: Int {
         switch self {
         case .select: return 1
-        case .highlight: return 2
-        case .unhighlight: return 3
-        case .custom(let x): return 4 + x.hashValue
+        case .edit: return 2
+        case .delete: return 3
+        case .highlight: return 4
+        case .unhighlight: return 5
+        case .willDisplay: return 6
+        case .willDisplayHeader: return 7
+        case .custom(let x): return 8 + x.hashValue
         }
     }
     
-    public static func ==(lhs: Action, rhs: Action) -> Bool {
+    public static func ==(lhs: DataSource.Action, rhs: DataSource.Action) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
 }
@@ -54,18 +64,19 @@ public protocol CellConfigurator {
  * Selectable Cell
  */
 public protocol CellSelectable: CellConfigurator {
+    
     typealias Handler = (Cell, IndexPath, Item) -> ()
     
-    var selectors: [Action: Handler] { get set }
+    var selectors: [DataSource.Action: Handler] { get set }
 }
 
 public extension CellSelectable {
     
-    func invoke(_ action: Action) -> Handler? {
+    func invoke(_ action: DataSource.Action) -> Handler? {
         return self.selectors[action]
     }
     
-    mutating func on(_ action: Action, handler: @escaping Handler) {
+    mutating func on(_ action: DataSource.Action, handler: @escaping Handler) {
         self.selectors[action] = handler
     }
 }
@@ -100,16 +111,16 @@ public protocol SectionConfigurator {
 public protocol SectionSelectable: SectionConfigurator {
     typealias Handler = (SectionView, Int) -> ()
 
-    var selectors: [Action: Handler] { get set }
+    var selectors: [DataSource.Action: Handler] { get set }
 }
 
 public extension SectionSelectable {
     
-    func invoke(_ action: Action) -> Handler? {
+    func invoke(_ action: DataSource.Action) -> Handler? {
         return self.selectors[action]
     }
     
-    mutating func on(_ action: Action, handler: @escaping Handler) {
+    mutating func on(_ action: DataSource.Action, handler: @escaping Handler) {
         self.selectors[action] = handler
     }
 }

@@ -3,11 +3,15 @@ import UIKit
 /**
  *  Composed Data Source
  */
-public struct ComposedDataSource:
+public class ComposedDataSource:
     TableViewDataSource,
     DataSourcesContainable
 {
     public var dataSources: [TableViewDataSource] = []
+    
+    init(_ dataSources: [TableViewDataSource]) {
+        self.dataSources = dataSources
+    }
 }
 
 /**
@@ -106,5 +110,25 @@ public extension TableViewDataSource where Self: DataSourcesContainable {
     func didUnhighlightRow(in tableView: UITableView, at indexPath: IndexPath) {
         let dataSource = self.dataSource(at: indexPath.section)
         dataSource.didUnhighlightRow(in: tableView, at: indexPath)
+    }
+    
+    func willDisplayRow(in tableView: UITableView, at indexPath: IndexPath) {
+        let dataSource = self.dataSource(at: indexPath.section)
+        dataSource.willDisplayRow(in: tableView, at: indexPath)
+    }
+    
+    func willDisplayHeader(for tableView: UITableView, in section: Int) {
+        let dataSource = self.dataSource(at: section)
+        return dataSource.willDisplayHeader(for: tableView, in: section)
+    }
+    
+    func canEditRow(for tableView: UITableView, at  indexPath: IndexPath) -> Bool {
+        let dataSource = self.dataSource(at: indexPath.section)
+        return dataSource.canEditRow(for: tableView, at: indexPath)
+    }
+    
+    func editActions(for tableView: UITableView, at indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let dataSource = self.dataSource(at: indexPath.section)
+        return dataSource.editActions(for: tableView, at: indexPath)
     }
 }

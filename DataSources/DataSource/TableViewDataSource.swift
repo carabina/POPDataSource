@@ -35,6 +35,14 @@ public protocol TableViewDataSource {
     func didHighlightRow(in tableView: UITableView, at indexPath: IndexPath)
     
     func didUnhighlightRow(in tableView: UITableView, at indexPath: IndexPath)
+    
+    func willDisplayRow(in tableView: UITableView, at indexPath: IndexPath)
+    
+    func willDisplayHeader(for tableView: UITableView, in section: Int)
+    
+    func canEditRow(for tableView: UITableView, at  indexPath: IndexPath) -> Bool
+    
+    func editActions(for tableView: UITableView, at indexPath: IndexPath) -> [UITableViewRowAction]?
 }
 
 /**
@@ -59,11 +67,11 @@ public extension TableViewDataSource {
     }
     
     func headerHeight(for tableView: UITableView, in section: Int) -> CGFloat {
-        return 0
+        return CGFloat.leastNonzeroMagnitude
     }
     
     func footerHeight(for tableView: UITableView, in section: Int) -> CGFloat {
-        return 0
+        return CGFloat.leastNonzeroMagnitude
     }
     
     func headerView(for tableView: UITableView, in section: Int) -> UIView? {
@@ -81,5 +89,19 @@ public extension TableViewDataSource {
     }
     
     func didUnhighlightRow(in tableView: UITableView, at indexPath: IndexPath) {
+    }
+    
+    func willDisplayRow(in tableView: UITableView, at indexPath: IndexPath) {
+    }
+    
+    func willDisplayHeader(for tableView: UITableView, in section: Int) {
+    }
+    
+    func canEditRow(for tableView: UITableView, at  indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func editActions(for tableView: UITableView, at indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return nil
     }
 }

@@ -32,6 +32,8 @@
 		89D8E3661D1C028F004AEF3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8E3651D1C028F004AEF3E /* Assets.xcassets */; };
 		89D8E3691D1C028F004AEF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8E3671D1C028F004AEF3E /* LaunchScreen.storyboard */; };
 		BB4E9EC93D721E797D957152 /* Pods_DataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A898CAB834CDC8A3B6AF5 /* Pods_DataSources.framework */; };
+		CE37D8931EA63559003864B0 /* EditableCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D8911EA63559003864B0 /* EditableCellDataSource.swift */; };
+		CE37D8941EA63559003864B0 /* EditableSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37D8921EA63559003864B0 /* EditableSectionDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		89D8E3651D1C028F004AEF3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D8E3681D1C028F004AEF3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D8E36A1D1C028F004AEF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE37D8911EA63559003864B0 /* EditableCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableCellDataSource.swift; sourceTree = "<group>"; };
+		CE37D8921EA63559003864B0 /* EditableSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableSectionDataSource.swift; sourceTree = "<group>"; };
 		EC7A898CAB834CDC8A3B6AF5 /* Pods_DataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C3EE2B20DDF535599CE40A /* Pods-DataSources.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSources.debug.xcconfig"; path = "../vendor/Pods/Target Support Files/Pods-DataSources/Pods-DataSources.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,8 @@
 		4DC1015F1E12635C00380556 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				CE37D8911EA63559003864B0 /* EditableCellDataSource.swift */,
+				CE37D8921EA63559003864B0 /* EditableSectionDataSource.swift */,
 				4DC101601E12635C00380556 /* TableViewDataSource.swift */,
 				4DA7C3AD1E1F8BE900398EC2 /* TableViewArrayDataSource.swift */,
 				4DA7C3AF1E1F900600398EC2 /* TableViewComposedDataSource.swift */,
@@ -272,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6D0DC6FB773493F29F90F9D1 /* [CP] Copy Pods Resources */ = {
@@ -312,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE37D8941EA63559003864B0 /* EditableSectionDataSource.swift in Sources */,
 				4D050DB61E5DC0A100760345 /* TextFieldTableViewCell.swift in Sources */,
 				4DC101651E12635C00380556 /* TableViewDataSourceShim.swift in Sources */,
 				4D322EA21E2FAF6B00C90847 /* TableViewDataSourceCollapsible.swift in Sources */,
@@ -319,6 +326,7 @@
 				4DC101641E12635C00380556 /* TableViewDataSource.swift in Sources */,
 				4DC101771E12636900380556 /* SegmentTableViewController.swift in Sources */,
 				4DC101761E12636900380556 /* MenuViewController.swift in Sources */,
+				CE37D8931EA63559003864B0 /* EditableCellDataSource.swift in Sources */,
 				4DA7C3B01E1F900600398EC2 /* TableViewComposedDataSource.swift in Sources */,
 				4D050DB91E5DC51B00760345 /* TextFieldDataSource.swift in Sources */,
 				4DC101751E12636900380556 /* Models.swift in Sources */,

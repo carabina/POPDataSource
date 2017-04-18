@@ -50,7 +50,7 @@ public extension TableViewDataSource where
         let item = self.item(at: indexPath.row)
         guard let configurator = self.cellConfigurator,
             let cell = tableView.dequeueReusableCell(withIdentifier: configurator.reuseIdentifier()) as? Cell else {
-                fatalError()
+                fatalError("Cell didn't register!!!")
         }
         configurator.configurateCell(cell, item: item, at: indexPath)
         return cell
@@ -112,6 +112,17 @@ public extension TableViewDataSource where
 }
 
 public extension TableViewDataSource where
+    Self: HeaderContainable, Self.Header: SectionSelectable,
+    Self.Header.SectionView: ReuseIdentifier
+ {
+    func willDisplayHeader(for tableView: UITableView, in section: Int) {
+        if let selector = self.header?.selectors[.willDisplayHeader] {
+            selector(HeaderView(), section)
+        }
+    }
+}
+
+public extension TableViewDataSource where
     Self: HeaderContainable,
     Self: SectionConfigurator
 {
@@ -144,7 +155,7 @@ public extension TableViewDataSource where
             return height(view, in: section)
         }
         
-        return UITableViewAutomaticDimension
+        return CGFloat.leastNonzeroMagnitude
     }
     
     func footerView(for tableView: UITableView, in section: Int) -> UIView? {
