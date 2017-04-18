@@ -103,7 +103,8 @@ struct AlbumsCellConfigurator: CellConfigurator, CellSelectable {
     /**
      *  Setup Selectors
      */
-    var selectors: [Action: (CustomeCell, IndexPath, Album) -> ()] = [:]
+    var selectors: [DataSource
+    .Action: (CustomeCell, IndexPath, Album) -> ()] = [:]
 
     /**
      *  Setup Cell
@@ -125,7 +126,8 @@ struct AlbumsSection: SectionConfigurator, SectionSelectable {
     /**
      *  Setup Selectors
      */
-    var selectors: [Action: (CustomeSection, Int) -> ()] = [:]
+    var selectors: [DataSource
+        .Action: (CustomeSection, Int) -> ()] = [:]
 
     /**
      *  Setup Section

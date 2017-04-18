@@ -43,7 +43,7 @@ class TextFieldViewController: UITableViewController {
             print("Password end editing: " + (cell.textField?.text ?? ""))
         }
         
-        let compossed = ComposedDataSource(dataSources:[name, surname, email, password])
+        let compossed = ComposedDataSource([name, surname, email, password])
         dataSource = TableViewDataSourceShim(dataSource: compossed)
     }
 }

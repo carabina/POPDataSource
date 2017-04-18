@@ -22,7 +22,8 @@ class TextFieldDataSource:
         return [""]
     }
     
-    var selectors: [Action: (TextFieldTableViewCell, IndexPath, String) -> ()] = [:]
+    var selectors: [DataSource
+        .Action: (TextFieldTableViewCell, IndexPath, String) -> ()] = [:]
     
     func reuseIdentifier() -> String {
         return TextFieldTableViewCell.identifier

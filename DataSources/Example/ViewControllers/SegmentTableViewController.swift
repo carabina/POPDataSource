@@ -11,7 +11,7 @@ class SegmentTableViewController: UITableViewController {
         
         self.tableView.register(CustomeSection.self)
         
-        let artists = ComposedDataSource(dataSources: LedZeppelin.artists)
+        let artists = ComposedDataSource(LedZeppelin.artists)
         let genres = GenresDataSource()
         
         self.segmentShim = SegmentDataSourceShim([artists, genres])

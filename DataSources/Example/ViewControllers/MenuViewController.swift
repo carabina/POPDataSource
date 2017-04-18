@@ -10,7 +10,7 @@ class MenuViewController: UITableViewController {
                 destinationController.dataSource = TableViewDataSourceShim(dataSource: GenresDataSource())
                 
             case "showArtists":
-                let dataSource = ComposedDataSource(dataSources: LedZeppelin.artists)
+                let dataSource = ComposedDataSource(LedZeppelin.artists)
                 destinationController.dataSource = TableViewDataSourceShim(dataSource: dataSource)
 
             case "showAlbums":
