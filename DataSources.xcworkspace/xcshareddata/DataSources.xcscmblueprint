@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9CF6C97F308E3531B567D080BD57424358ED485D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9FC56761DE75C4B53B0EE7B1D8E29E27A8DCFE1E" : 9223372036854775807,
+    "9CF6C97F308E3531B567D080BD57424358ED485D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E355FC68-306F-4756-BF5D-41248959FFFF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9FC56761DE75C4B53B0EE7B1D8E29E27A8DCFE1E" : "DataSource\/vendor\/POPDataSources\/",
+    "9CF6C97F308E3531B567D080BD57424358ED485D" : "DataSource\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DataSources",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DataSources.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dsay\/POPDataSource.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9CF6C97F308E3531B567D080BD57424358ED485D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dsay\/POPDataSources.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FC56761DE75C4B53B0EE7B1D8E29E27A8DCFE1E"
+    }
+  ]
+}

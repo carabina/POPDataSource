@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '10.0'
 
 project '../DataSources/DataSources'
@@ -9,5 +10,6 @@ use_frameworks!
 
 target :DataSources do
     pod 'ReactiveCocoa', '5.0.0'
+    pod 'POPDataSource', :path => '/Users/user/Desktop/DataSource/vendor/POPDataSources/POPDataSource.podspec'
 end
 
