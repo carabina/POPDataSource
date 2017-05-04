@@ -8,16 +8,16 @@ class MenuViewController: UITableViewController {
         if let destinationController = segue.destination as? TableViewController {
             switch segue.identifier! {
             case "showGenres":
-                destinationController.dataSource = TableViewDataSourceShim(dataSource: GenresDataSource())
+                destinationController.shim = TableViewDataSourceShim(GenresDataSource())
                 
             case "showArtists":
                 let dataSource = ComposedDataSource(LedZeppelin.artists)
-                destinationController.dataSource = TableViewDataSourceShim(dataSource: dataSource)
+                destinationController.shim = TableViewDataSourceShim(dataSource)
 
             case "showAlbums":
                 let dataSource = AlbumsDataSource()
                 
-                dataSource.cellConfigurator?.on(.select) { cell, index, item in
+                dataSource.cellConfigurator?.on(.willDisplay) { cell, index, item in
                     print("tap on cell")
                 }
                 
@@ -29,7 +29,8 @@ class MenuViewController: UITableViewController {
                     print("tap on button in section")
                 }
                 
-                destinationController.dataSource = TableViewDataSourceShim(dataSource: dataSource)
+                let composed = ComposedDataSource([dataSource, dataSource, dataSource])
+                destinationController.shim = TableViewDataSourceShim(composed)
 
                 case "showCollapsible":
                     let albums = AlbumsDataSource()
@@ -41,7 +42,7 @@ class MenuViewController: UITableViewController {
                             controller?.tableView.expand(albums)
                         }
                     }
-                    destinationController.dataSource = TableViewDataSourceShim(dataSource: albums)
+                    destinationController.shim = TableViewDataSourceShim(albums)
                 
             default:
                 fatalError("not implemented")

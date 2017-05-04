@@ -10,10 +10,10 @@ class TextFieldViewController: UITableViewController {
     private var email = EmailDataSource()
     private var password = PasswordDataSource()
     
-    private var dataSource: TableViewDataSourceShim? = nil {
+    private var shim: TableViewDataSourceShim? = nil {
         didSet {
-            tableView.dataSource = dataSource
-            tableView.delegate = dataSource
+            tableView.dataSource = shim
+            tableView.delegate = shim
         }
     }
     
@@ -45,7 +45,7 @@ class TextFieldViewController: UITableViewController {
         }
         
         let compossed = ComposedDataSource([name, surname, email, password])
-        dataSource = TableViewDataSourceShim(dataSource: compossed)
+        shim = TableViewDataSourceShim(compossed)
     }
 }
 
