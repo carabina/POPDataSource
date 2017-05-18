@@ -1,5 +1,5 @@
 PODS:
-  - POPDataSource (0.1.2)
+  - POPDataSource (0.1.3)
   - ReactiveCocoa (5.0.0):
     - ReactiveSwift (~> 1.0.0)
   - ReactiveSwift (1.0.0):
@@ -7,25 +7,25 @@ PODS:
   - Result (3.1.0)
 
 DEPENDENCIES:
-  - POPDataSource (from `https://github.com/dsay/POPDataSources.git`, tag `0.1.2`)
+  - POPDataSource (from `https://github.com/dsay/POPDataSources.git`, tag `0.1.3`)
   - ReactiveCocoa (= 5.0.0)
 
 EXTERNAL SOURCES:
   POPDataSource:
     :git: https://github.com/dsay/POPDataSources.git
-    :tag: 0.1.2
+    :tag: 0.1.3
 
 CHECKOUT OPTIONS:
   POPDataSource:
     :git: https://github.com/dsay/POPDataSources.git
-    :tag: 0.1.2
+    :tag: 0.1.3
 
 SPEC CHECKSUMS:
-  POPDataSource: fa94c6e2809930573bcc4a04af5cc330ee722474
+  POPDataSource: d1f529bcfa7beb8afe0337264ad07fbf1ee034f5
   ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
   ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
 
-PODFILE CHECKSUM: 36308d11182cbb041dcfe1b34aac6057fdd6cec2
+PODFILE CHECKSUM: 8be4b6c1a4dd5a7cf42beaced51bfb6254faf08d
 
 COCOAPODS: 1.2.1
