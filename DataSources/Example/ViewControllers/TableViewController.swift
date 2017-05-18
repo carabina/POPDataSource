@@ -3,15 +3,17 @@ import POPDataSource
 
 class TableViewController: UITableViewController {
     
-    var dataSource: TableViewDataSourceShim!
+    var shim: TableViewDataSourceShim! {
+        didSet {
+            shim.tableView = tableView
+            tableView.dataSource = shim
+            tableView.delegate = shim
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.register(CustomeSection.self)
-        
-        self.tableView.dataSource = self.dataSource
-        self.tableView.delegate = self.dataSource
+        tableView.register(CustomeSection.self)
     }
 }
 

@@ -16,7 +16,7 @@ class TextFieldDataSource:
         static let exit = "exit"
     }
     
-    private weak var cell: TextFieldTableViewCell?
+  //  private weak var cell: TextFieldTableViewCell?
     
     var data: [String] {
         return [""]
