@@ -2,9 +2,9 @@ import UIKit
 import POPDataSource
 
 class MenuViewController: UITableViewController {
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if let destinationController = segue.destination as? TableViewController {
             switch segue.identifier! {
             case "showGenres":
@@ -13,7 +13,7 @@ class MenuViewController: UITableViewController {
             case "showArtists":
                 let dataSource = ComposedDataSource(LedZeppelin.artists)
                 destinationController.shim = TableViewDataSourceShim(dataSource)
-
+                
             case "showAlbums":
                 let dataSource = AlbumsDataSource()
                 
@@ -31,23 +31,23 @@ class MenuViewController: UITableViewController {
                 
                 let composed = ComposedDataSource([dataSource, dataSource, dataSource])
                 destinationController.shim = TableViewDataSourceShim(composed)
-
-                case "showCollapsible":
-                    let albums = AlbumsDataSource()
-                    albums.header?.on(.custom(Actions.Album.onSection)) {
-                        [weak controller = destinationController, unowned albums] (header, index) in
-                        if albums.open {
-                            controller?.tableView.collapse(albums)
-                        } else {
-                            controller?.tableView.expand(albums)
-                        }
+                
+            case "showCollapsible":
+                let albums = AlbumsDataSource()
+                albums.header?.on(.custom(Actions.Album.onSection)) {
+                    [weak controller = destinationController, unowned albums] (header, index) in
+                    if albums.open {
+                        controller?.tableView.collapse(albums)
+                    } else {
+                        controller?.tableView.expand(albums)
                     }
-                    destinationController.shim = TableViewDataSourceShim(albums)
+                }
+                destinationController.shim = TableViewDataSourceShim(albums)
                 
             default:
                 fatalError("not implemented")
             }
         }
     }
-
+    
 }

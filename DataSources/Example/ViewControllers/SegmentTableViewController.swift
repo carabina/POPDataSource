@@ -28,3 +28,5 @@ class SegmentTableViewController: UITableViewController {
         segmentShim.selectIndex = segment.selectedSegmentIndex
     }
 }
+class CellectionSegmentTableViewController: UICollectionViewController {
+}
