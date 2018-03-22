@@ -14,6 +14,7 @@ struct GenresDataSource:
     CellContainable,
     CellConfigurator
 {
+    typealias CollectionCell = UITableViewCell
     /**
      *  Data Containable protocol
      */
@@ -42,6 +43,8 @@ extension Artist:
     HeaderContainable,
     SectionConfigurator
 {
+    typealias CollectionCell = UITableViewCell
+    
     /**
      *  Data Containable protocol
      */
@@ -100,6 +103,9 @@ class AlbumsDataSource:
 }
 
 struct AlbumsCellConfigurator: CellConfigurator, CellSelectable {
+    
+    typealias CollectionCell = CustomeCell
+    
     /**
      *  Setup Selectors
      */

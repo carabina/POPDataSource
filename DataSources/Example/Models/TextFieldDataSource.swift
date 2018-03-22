@@ -18,6 +18,8 @@ class TextFieldDataSource:
     
   //  private weak var cell: TextFieldTableViewCell?
     
+    typealias CollectionCell = TextFieldTableViewCell
+    
     var data: [String] {
         return [""]
     }

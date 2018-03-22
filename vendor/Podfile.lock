@@ -1,5 +1,5 @@
 PODS:
-  - POPDataSource (0.1.2)
+  - POPDataSource (0.1.4)
   - ReactiveCocoa (5.0.0):
     - ReactiveSwift (~> 1.0.0)
   - ReactiveSwift (1.0.0):
@@ -7,19 +7,19 @@ PODS:
   - Result (3.1.0)
 
 DEPENDENCIES:
-  - POPDataSource (from `/Users/user/Desktop/DataSource/vendor/POPDataSources/POPDataSource.podspec`)
+  - POPDataSource (from `/Users/antonkryzhanovskiy/Projects/POPDataSource/vendor/POPDataSources/POPDataSource.podspec`)
   - ReactiveCocoa (= 5.0.0)
 
 EXTERNAL SOURCES:
   POPDataSource:
-    :path: "/Users/user/Desktop/DataSource/vendor/POPDataSources/POPDataSource.podspec"
+    :path: /Users/antonkryzhanovskiy/Projects/POPDataSource/vendor/POPDataSources/POPDataSource.podspec
 
 SPEC CHECKSUMS:
-  POPDataSource: fa94c6e2809930573bcc4a04af5cc330ee722474
+  POPDataSource: f3b6d9a84a26baf32b17b5e6cea2a3591de2b551
   ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
   ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
 
-PODFILE CHECKSUM: 0b18b2e6d9c59ec09120c599d42a97a6ac00f8f0
+PODFILE CHECKSUM: 8e0afc6442ce49fa95d5225b710ebd54aaf5bf12
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0
