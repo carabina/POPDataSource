@@ -47,6 +47,10 @@ class MenuViewController: UITableViewController {
             default:
                 fatalError("not implemented")
             }
+        } else if let destinationController = segue.destination as? CollectionViewController {
+            if segue.identifier == "showGenresInCollection" {
+                destinationController.shim = CollectionViewDataSourceShim(GenresCollectionViewDataSource())
+            }
         }
     }
     

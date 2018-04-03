@@ -33,6 +33,30 @@ struct GenresDataSource:
     }
 }
 
+struct GenresCollectionViewDataSource:
+    CollectionViewDataSource,
+    DataContainable,
+    CellContainable,
+    CellConfigurator {
+    
+    typealias CollectionCell = CollectionViewCell
+    /**
+     *  Data Containable protocol
+     */
+    var data: [Genre] = LedZeppelin.genres
+    
+    /**
+     *  Setup Cell
+     */
+    func reuseIdentifier() -> String {
+        return "genresCell"
+    }
+    
+    func configurateCell(_ cell: CollectionViewCell, item: Genre, at indexPath: IndexPath) {
+        cell.title?.text = item.name
+    }
+}
+
 
 
 extension Artist:

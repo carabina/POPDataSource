@@ -25,6 +25,8 @@
 		89D8E3661D1C028F004AEF3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8E3651D1C028F004AEF3E /* Assets.xcassets */; };
 		89D8E3691D1C028F004AEF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8E3671D1C028F004AEF3E /* LaunchScreen.storyboard */; };
 		BB4E9EC93D721E797D957152 /* Pods_DataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A898CAB834CDC8A3B6AF5 /* Pods_DataSources.framework */; };
+		C062BAC5206BBF91007210D7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062BAC4206BBF91007210D7 /* CollectionViewController.swift */; };
+		C062BAC7206BC610007210D7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062BAC6206BC610007210D7 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		89D8E3651D1C028F004AEF3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D8E3681D1C028F004AEF3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D8E36A1D1C028F004AEF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C062BAC4206BBF91007210D7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		C062BAC6206BC610007210D7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		EC7A898CAB834CDC8A3B6AF5 /* Pods_DataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C3EE2B20DDF535599CE40A /* Pods-DataSources.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSources.debug.xcconfig"; path = "../vendor/Pods/Target Support Files/Pods-DataSources/Pods-DataSources.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 				4DC1016F1E12636900380556 /* TableViewController.swift */,
 				4DC1016E1E12636900380556 /* SegmentTableViewController.swift */,
 				4D5623631E41C7340008F824 /* TextFieldViewController.swift */,
+				C062BAC4206BBF91007210D7 /* CollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				4DC101711E12636900380556 /* CustomeCell.swift */,
 				4DC101721E12636900380556 /* CustomeSection.swift */,
 				4DC101731E12636900380556 /* CustomeSection.xib */,
+				C062BAC6206BC610007210D7 /* CollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C062BAC5206BBF91007210D7 /* CollectionViewController.swift in Sources */,
 				4D050DB61E5DC0A100760345 /* TextFieldTableViewCell.swift in Sources */,
 				4DC1017A1E12636900380556 /* CustomeSection.swift in Sources */,
 				4DC101771E12636900380556 /* SegmentTableViewController.swift in Sources */,
@@ -302,6 +309,7 @@
 				4D050DB91E5DC51B00760345 /* TextFieldDataSource.swift in Sources */,
 				4DC101751E12636900380556 /* Models.swift in Sources */,
 				4DC101791E12636900380556 /* CustomeCell.swift in Sources */,
+				C062BAC7206BC610007210D7 /* CollectionViewCell.swift in Sources */,
 				4DC101781E12636900380556 /* TableViewController.swift in Sources */,
 				4DC1017D1E1263BA00380556 /* DataSources.swift in Sources */,
 				4D5623641E41C7340008F824 /* TextFieldViewController.swift in Sources */,
