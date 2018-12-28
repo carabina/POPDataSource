@@ -4,7 +4,7 @@ import POPDataSource
 class MenuViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+                
         if let destinationController = segue.destination as? TableViewController {
             switch segue.identifier! {
             case "showGenres":

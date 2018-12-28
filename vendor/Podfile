@@ -10,6 +10,6 @@ use_frameworks!
 
 target :DataSources do
     pod 'ReactiveCocoa', '5.0.0'
-    pod 'POPDataSource', :path => '/Users/antonkryzhanovskiy/Projects/POPDataSource/vendor/POPDataSources/POPDataSource.podspec'
+    pod 'POPDataSource', :path => '/Users/user/Desktop/prog/POPDataSource/vendor/POPDataSources/POPDataSource.podspec'
 end
 

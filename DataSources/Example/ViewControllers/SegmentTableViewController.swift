@@ -24,7 +24,7 @@ class SegmentTableViewController: UITableViewController {
         segment?.addTarget(self, action: #selector(SegmentTableViewController.select(segment:)), for: .valueChanged)
     }
     
-    func select(segment: UISegmentedControl) {
+    @objc func select(segment: UISegmentedControl) {
         segmentShim.selectIndex = segment.selectedSegmentIndex
     }
 }

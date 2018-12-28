@@ -21,7 +21,7 @@ class TextFieldViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(cell: TextFieldTableViewCell.self)
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         
         setupDataSource()
